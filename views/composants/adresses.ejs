@@ -24,15 +24,4 @@
 	  <button type="submit">Submit</button>
 	</form>
 
-	<ul class="adresse">
-		 <% for(adr of adresse) {%>
-		 <li class="client">
-		 <span><%= adr.nom %></span>
-		 <span><%= adr.telephone %></span>
-		 <span> - <%= adr._id %></span>
-		 <a href=http://localhost:8081/detruire/<%= adr._id %> >Détruire </a> "
-		 </li>
-		 <% } %>
-	</ul>
-	
 </table>
