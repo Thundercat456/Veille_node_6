@@ -1,5 +1,5 @@
 const peupler = require('./mes_modules/peupler');
-
+const util = require ("util");
 
 // utilisation de la fonction peupler()
-res.resultat = peupler()
+console.log(util.inspect(peupler()));
