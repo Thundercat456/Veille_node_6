@@ -14,16 +14,26 @@ const peupler_json = ()=> {
 
 	let tableauMembres=[];
 
-	console.log("ok");
-	objMembres={
+	//console.log("ok");
+	let rndNom, rndPrenom, rndDomaine;
 
-		nom:"Malette",
-		prenom:"Mathieu",
-		courriel:"mathieumalette@hotmail.com"
+	for(let i=0;i<=50;i++){
+
+		rndNom = tableaux.nom[Math.floor(Math.random()*longTabNom)];
+		rndPrenom = tableaux.prenom[Math.floor(Math.random()*longTabPrenom)];
+		rndDomaine = tableaux.domaine[Math.floor(Math.random()*longTabDomaine)];
+
+		objMembres={
+
+			nom:rndNom,
+			prenom:rndPrenom,
+			courriel:rndNom+rndPrenom+"@"+rndDomaine
+
+		}
+
+		tableauMembres.push(objMembres);
 
 	}
-
-	tableauMembres.push(objMembres);
 	return tableauMembres; 
 
 }

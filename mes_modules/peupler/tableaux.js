@@ -59,7 +59,7 @@ let tableaux = {
 
 domaine : [
                   'hotmail.com',
-                  'vedeotron.com',
+                  'videotron.com',
                   'gmail.com',
                   'yahoo.com',
                   'cmaisonneuve.qc.ca',
