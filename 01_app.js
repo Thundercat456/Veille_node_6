@@ -6,6 +6,7 @@ const MongoClient = require('mongodb').MongoClient
 app.use(express.static('public'))
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({extended: true}))
+const ObjectID = require('mongodb').ObjectID;
 
 app.get('/', (req, res) => {
   res.render('gabarit.ejs')  
@@ -25,9 +26,19 @@ app.post('/ajouter', (req, res) => {
 	db.collection('adresse').save(req.body, (err, result) => {
  		if (err) return console.log(err)
  		console.log('sauvegarder dans la BD')
- 		res.redirect('/')
+ 		res.redirect('/adresses')
  	})
 })
+
+app.get('/detruire/:id', (req, res) => {
+
+ db.collection('adresse')
+ .findOneAndDelete( {'_id': req.params.id} ,(err, resultat) => {
+ if (err) return res.send(500, err)
+ res.redirect('/adresses')
+ })
+
+}) 
 
 
 /*----------------------Connexion à MongoDB et au serveur Node.js-----------------------*/
